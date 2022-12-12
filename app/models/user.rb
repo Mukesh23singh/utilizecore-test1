@@ -6,8 +6,8 @@ class User < ApplicationRecord
 	validates :name, presence: true
 
 	has_one :address
-	has_many :send_parcels, foreign_key: :sender_id, class_name: 'Parcel'
-	has_many :received_parcels, foreign_key: :receiver_id, class_name: 'Parcel'
+	has_many :sender, foreign_key: :sender_id, class_name: 'Parcel'
+	has_many :receiver, foreign_key: :receiver_id, class_name: 'Parcel'
 
 	accepts_nested_attributes_for :address
 

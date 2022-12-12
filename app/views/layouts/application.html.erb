@@ -20,7 +20,7 @@
         <li><a href="/parcels">Parcels</a></li>
         <li><a href="/users">Manage Users</a></li>
         <li><a href="/service_types">Service Types</a></li>
-        <li><%= link_to "Report", destroy_user_session_path, :method => 'delete' %></li>
+        <li><%= link_to "Report", parcel_report_path, :method => 'get' %></li>
         <li><%= link_to "Sign Out", destroy_user_session_path, :method => 'delete' %></li>
       <%else %>
         <li><%= link_to 'Create Parcel', new_parcel_path %></li>

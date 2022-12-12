@@ -62,11 +62,15 @@ class ParcelsController < ApplicationController
     end
   end
 
+  def report
+    send_file "#{Rails.root}/public/data.xlsx"
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
 
     def users_and_service_types
-      @users = User.includes(:address).all.map{|user| [user.name_with_address, user.id] if user.address}.compact!
+      @users = User.includes(:address).all.map{|user| [user.name_with_address, user.id] if user.address && user.name != 'admin'}.compact
       @service_types = ServiceType.all.map{|service_type| [service_type.name, service_type.id]}
     end
 
