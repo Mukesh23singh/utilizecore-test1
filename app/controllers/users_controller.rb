@@ -26,7 +26,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     respond_to do |format|
-      if @user.save
+      if @user.save(validate: false)
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -68,6 +68,6 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:name, :email, address_attributes: [:address_line_one, :address_line_two,
                                                                        :city, :state, :country,
-                                                                       :pincode, :mobile_number])
+                                                                       :pincode, :mobile_number, :id])
     end
 end

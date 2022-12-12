@@ -6,9 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-# ['Speed Post', 'Regular'].each do |name|
-# 	ServiceType.create(name: name)
-# end
+['Speed Post', 'Regular'].each do |name|
+	ServiceType.create(name: name)
+end
 
 
 ['sender', 'receiver'].each do |name|
@@ -20,8 +20,8 @@
 end
 
 
-# user = User.new(name: 'admin', email: "admin@gmail.com", password: '121212', password_confirmation: '121212')
-# user.build_address(address_line_one: "Test Street admin", city: "New Delhi",
-# 		               state: "New Delhi", country: "India", pincode: 110111,
-# 		               mobile_number: '9999999999')
-# user.save!
+user = User.new(name: 'admin', email: "admin@gmail.com", password: '121212', password_confirmation: '121212')
+user.build_address(address_line_one: "Test Street admin", city: "New Delhi",
+		               state: "New Delhi", country: "India", pincode: 110111,
+		               mobile_number: '9999999999')
+user.save!
