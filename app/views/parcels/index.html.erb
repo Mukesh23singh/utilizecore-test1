@@ -11,6 +11,7 @@
 <table>
   <thead>
     <tr>
+      <th>ID</th>
       <th>Weight</th>
       <th>Status</th>
       <th>Service Type</th>
@@ -24,6 +25,7 @@
   <tbody>
     <% @parcels.each do |parcel| %>
       <tr>
+        <td><%= parcel.unique_id %></td>
         <td><%= parcel.weight %></td>
         <td><%= parcel.status %></td>
         <td><%= parcel.service_type.name %></td>

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users, :skip => :registration
   resources :service_types
   resources :parcels
   resources :addresses

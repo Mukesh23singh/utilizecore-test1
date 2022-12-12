@@ -20,7 +20,7 @@
   <tbody>
     <% @parcels.each do |parcel| %>
       <tr>
-        <td><%= parcel.id %></td>
+        <td><%= parcel.unique_id %></td>
         <td><%= parcel.status %></td>
       </tr>
     <% end %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_08_120525) do
+ActiveRecord::Schema.define(version: 2022_12_11_103929) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_08_08_120525) do
     t.decimal "cost", precision: 8, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "unique_id"
     t.index ["receiver_id"], name: "index_parcels_on_receiver_id"
     t.index ["sender_id"], name: "index_parcels_on_sender_id"
     t.index ["service_type_id"], name: "index_parcels_on_service_type_id"
@@ -55,6 +56,12 @@ ActiveRecord::Schema.define(version: 2021_08_08_120525) do
     t.string "email", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "reset_password_token"
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

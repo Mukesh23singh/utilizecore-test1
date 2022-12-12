@@ -4,9 +4,9 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Welcome to Courier Service, <%= @receiver.name %></h1>
+    <h1>Welcome to Courier Service, <%= @sender.name %></h1>
     <p>
-      A Parcel is sent by: <%= @sender.name %>. Use this ID: <%= @parcel.unique_id %> to track it.<br>
+      Your Parcel is ready to ship:  Use this ID: <%= @parcel.unique_id %> to track it.<br>
     </p>
     <p>
       Visit link: <%= @url %>.
